@@ -1,11 +1,12 @@
 package rewards;
 
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
-import javax.sql.DataSource;
-
+import config.RewardsConfig;
 /**
  * TODO-06: Study this configuration class used for testing
  * - It contains a @Bean method that returns DataSource.
@@ -53,6 +54,7 @@ import javax.sql.DataSource;
  *
  */
 @Configuration
+@org.springframework.context.annotation.Import(RewardsConfig.class)
 public class TestInfrastructureConfig {
 
 	/**
